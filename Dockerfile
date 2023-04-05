@@ -1,5 +1,8 @@
 FROM alpine:3.14 AS build
 
+RUN apk update && apk add tzdata
+ENV TZ="America/Sao_Paulo"
+
 WORKDIR /root
 
 RUN apk add --update --no-cache nodejs npm
